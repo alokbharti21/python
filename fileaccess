@@ -1,0 +1,16 @@
+try:
+    #this will go to the file in read mode
+    hello_file=open("flight","r")
+    #this will open with append mode which will allow us write
+    another_file=open("another.txt","a")
+    text_from_file=hello_file.read()
+    #this will split with enter and save in the list format
+    list1=text_from_file.split("/n")
+    for line in list1:
+        if("Hello" in line):
+            print(line)
+            another_file.write(line)
+except:
+    print("Error Occured")
+finally:
+    hello_file.close()
